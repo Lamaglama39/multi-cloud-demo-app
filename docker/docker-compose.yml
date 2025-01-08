@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  terraform:
+    build: .
+    image: terraform-multi-cloud
+    container_name: terraform-container
+
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - ARM_SUBSCRIPTION_ID
+      - ARM_CLIENT_ID
+      - ARM_CLIENT_SECRET
+      - ARM_TENANT_ID
+      - GOOGLE_APPLICATION_CREDENTIALS
+
+    volumes:
+      - type: bind
+        source: "../app"
+        target: "/workspace/app"
+      - type: bind
+        source: "../.secret/application_default_credentials.json"
+        target: "/workspace/.config/application_default_credentials.json"
+
+    tty: true
+
+    entrypoint: ["/bin/bash"]
