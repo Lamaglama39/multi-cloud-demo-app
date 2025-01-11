@@ -1,5 +1,5 @@
 # multi-cloud-demo-app
-AWS - Azure / AWS - Google Cloud を相互にVPNで接続した、
+AWS - Azure / AWS - Google Cloud を相互にVPNで接続した、  
 マルチクラウド環境を構築するためのterraformです。
 
 ## インフラ構成図
@@ -8,7 +8,7 @@ AWS - Azure / AWS - Google Cloud を相互にVPNで接続した、
 </p>
 
 ## 事前準備
-Terraform を実行するときに使用する認証情報を用意してください。
+Terraform を実行するときに使用する認証情報を用意してください。  
 このリポジトリでは以下の認証情報を想定しています。
 
 * AWS - [IAM User](https://docs.aws.amazon.com/ja_jp/cli/v1/userguide/cli-authentication-user.html)
