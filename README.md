@@ -54,6 +54,8 @@ source ../../.secret/setting.sh
 ```
 cd ./app/examples
 ```
+
+apply実行時にGoogle CloudのプロジェクトIDを入力する。
 ```
 terraform init && \
 terraform apply
@@ -104,6 +106,8 @@ docker exec -it terraform-container /bin/bash
 ```
 cd ./app/examples
 ```
+
+apply実行時にGoogle CloudのプロジェクトIDを入力する。
 ```
 terraform init && \
 terraform apply
