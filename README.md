@@ -18,6 +18,8 @@ Terraform を実行するときに使用する認証情報を用意してくだ�
 ## ローカルで実行する場合
 
 * 認証情報 設定
+
+(1)環境変数用ファイルを作成する (AWS/Azureは取得したシークレットを記載)
 ```
 mkdir ./.secret
 ```
@@ -38,6 +40,8 @@ export ARM_TENANT_ID="<arm_tenant_id>"
 export GOOGLE_APPLICATION_CREDENTIALS="../../.secret/application_default_credentials.json"
 EOL
 ```
+
+(2)取得したGoogle Cloudの認証情報を記載する
 ```
 # GCP Service Account 
 vi ./.secret/application_default_credentials.json
@@ -58,6 +62,8 @@ terraform apply
 ## コンテナで実行する場合
 
 * 認証情報 設定
+
+(1)環境変数用ファイルを作成する (AWS/Azureは取得したシークレットを記載)
 ```
 mkdir ./.secret
 ```
@@ -74,9 +80,11 @@ ARM_CLIENT_SECRET="<arm_client_secret>"
 ARM_TENANT_ID="<arm_tenant_id>"
 
 # Google Cloud Credential
-GOOGLE_APPLICATION_CREDENTIALS="/root/.config/application_default_credentials.json"
+GOOGLE_APPLICATION_CREDENTIALS="/workspace/.config/application_default_credentials.json"
 EOL
 ```
+
+(2)取得したGoogle Cloudの認証情報を記載する
 ```
 # GCP Service Account 
 vi ./.secret/application_default_credentials.json
