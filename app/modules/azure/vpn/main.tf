@@ -38,6 +38,6 @@ resource "azurerm_virtual_network_gateway_connection" "main" {
 
   type                       = "IPsec"
   virtual_network_gateway_id = azurerm_virtual_network_gateway.main.id
-  local_network_gateway_id = azurerm_local_network_gateway.main[each.key].id
-  shared_key = each.value.pre_shared_key
+  local_network_gateway_id   = azurerm_local_network_gateway.main[each.key].id
+  shared_key                 = each.value.pre_shared_key
 }

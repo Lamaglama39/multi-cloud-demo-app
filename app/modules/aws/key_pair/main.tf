@@ -9,7 +9,8 @@ resource "local_file" "private_key_pem" {
 }
 
 module "key_pair" {
-  source = "terraform-aws-modules/key-pair/aws"
+  source  = "terraform-aws-modules/key-pair/aws"
+  version = "~> 2.0.3"
 
   key_name              = "${var.app_name}-key"
   public_key            = tls_private_key.this.public_key_openssh

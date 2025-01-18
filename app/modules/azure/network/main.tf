@@ -1,5 +1,6 @@
 module "avm-res-network-virtualnetwork" {
-  source = "Azure/avm-res-network-virtualnetwork/azurerm"
+  source  = "Azure/avm-res-network-virtualnetwork/azurerm"
+  version = "~> 0.8.0"
 
   address_space       = var.address_space
   location            = var.location

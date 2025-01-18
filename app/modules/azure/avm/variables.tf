@@ -26,13 +26,13 @@ variable "network_security_group_id" {
 variable "vm_size" {
   description = "The size of the virtual machine"
   type        = string
-  
+
 }
 
 variable "delete_os_disk_on_termination" {
   description = "Whether to delete the OS disk when the virtual machine is deleted"
   type        = bool
-  default = true
+  default     = true
 }
 
 variable "storage_image_reference" {

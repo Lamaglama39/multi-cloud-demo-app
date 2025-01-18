@@ -7,7 +7,8 @@ data "aws_cloudfront_origin_request_policy" "main" {
 }
 
 module "cdn" {
-  source = "terraform-aws-modules/cloudfront/aws"
+  source  = "terraform-aws-modules/cloudfront/aws"
+  version = "~> 4.1.0"
 
   comment             = "CloudFront with ALB Origin (No Cache)"
   enabled             = true

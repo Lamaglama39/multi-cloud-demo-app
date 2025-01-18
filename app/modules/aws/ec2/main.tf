@@ -1,5 +1,7 @@
 module "ec2" {
-  source   = "terraform-aws-modules/ec2-instance/aws"
+  source  = "terraform-aws-modules/ec2-instance/aws"
+  version = "~> 5.7.1"
+
   for_each = var.server_instances_map
 
   name          = "${var.app_name}-${var.subnet_id}-ec2"

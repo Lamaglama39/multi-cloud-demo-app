@@ -19,11 +19,11 @@ resource "azurerm_network_interface_security_group_association" "main" {
 }
 
 resource "azurerm_virtual_machine" "main" {
-  name                  = "${var.app_name}-avm"
-  location              = var.location
-  resource_group_name   = var.resource_group_name
-  network_interface_ids = [azurerm_network_interface.main.id]
-  vm_size               = var.vm_size
+  name                          = "${var.app_name}-avm"
+  location                      = var.location
+  resource_group_name           = var.resource_group_name
+  network_interface_ids         = [azurerm_network_interface.main.id]
+  vm_size                       = var.vm_size
   delete_os_disk_on_termination = var.delete_os_disk_on_termination
 
 
