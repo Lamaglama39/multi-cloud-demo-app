@@ -13,19 +13,19 @@ module "aws_vpc" {
 module "aws_azure_vpn" {
   source = "../modules/aws/vpn"
 
-  app_name           = "${local.app_name}-azure"
-  ip_address         = module.azure_public_ip.azurerm_public_ip.ip_address
-  vpn_gateway_id     = module.aws_vpc.vpc.vgw_id
-  address_space      = local.azure_cidr
+  app_name       = "${local.app_name}-azure"
+  ip_address     = module.azure_public_ip.azurerm_public_ip.ip_address
+  vpn_gateway_id = module.aws_vpc.vpc.vgw_id
+  address_space  = local.azure_cidr
 }
 
 module "aws_gcp_vpn" {
   source = "../modules/aws/vpn"
 
-  app_name           = "${local.app_name}-gcp"
-  ip_address         = module.gcp_public_ip.google_compute_address.address
-  vpn_gateway_id     = module.aws_vpc.vpc.vgw_id
-  address_space      = [local.gcp_subnets[0].subnet_ip]
+  app_name       = "${local.app_name}-gcp"
+  ip_address     = module.gcp_public_ip.google_compute_address.address
+  vpn_gateway_id = module.aws_vpc.vpc.vgw_id
+  address_space  = [local.gcp_subnets[0].subnet_ip]
 }
 
 module "aws_sg" {
